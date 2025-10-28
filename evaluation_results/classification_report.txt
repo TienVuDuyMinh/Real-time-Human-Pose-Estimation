@@ -1,0 +1,12 @@
+              precision    recall  f1-score   support
+
+     walking     0.9845    0.9795    0.9820       195
+     running     0.9360    0.9845    0.9596       193
+     jumping     0.9948    0.9796    0.9871       196
+ standing_up     0.9792    0.9641    0.9716       195
+    carrying     0.9948    0.9794    0.9870       194
+     falling     0.0000    0.0000    0.0000         0
+
+    accuracy                         0.9774       973
+   macro avg     0.8149    0.8145    0.8146       973
+weighted avg     0.9779    0.9774    0.9775       973

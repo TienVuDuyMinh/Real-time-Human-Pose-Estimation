@@ -1,0 +1,7 @@
+/* File: app/static/css/style.css */
+body { font-family: sans-serif; text-align: center; background-color: #282c34; color: white; }
+h1 { color: #61dafb; }
+.container { display: flex; justify-content: center; align-items: flex-start; gap: 30px; margin-top: 20px; }
+.video-container { border: 2px solid #61dafb; padding: 5px; background-color: black; }
+.result-container { padding: 20px; border: 1px solid #ccc; min-width: 250px; text-align: left; }
+#action-text { font-size: 2em; color: #a0ffa0; font-weight: bold; }

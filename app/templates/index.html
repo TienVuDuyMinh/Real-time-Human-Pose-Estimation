@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pose Estimation Project</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Real-time Action Recognition</h1>
+    <div class="container">
+        <div class="video-container">
+            <video id="video" width="640" height="480" autoplay playsinline></video>
+            </div>
+        <div class="result-container">
+            <h2>Hành động dự đoán:</h2>
+            <p id="action-text">Đang chờ...</p>
+            <p>Độ tin cậy: <span id="confidence-text">N/A</span></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+# File: configs/config.yaml
+
+# --- Đường dẫn Dữ liệu ---
+data_root: 'data'
+ntu_raw_dir: 'data/raw/ntu_rgbd_skeletons' # Nơi chứa file NTU gốc (nếu bạn xử lý lại)
+custom_raw_dir: 'data/raw/custom_videos'
+ntu_processed_dir: 'data/processed/ntu_filtered_skeletons'
+custom_processed_dir: 'data/processed/custom_skeletons'
+
+# --- Đường dẫn Model ---
+weights_dir: 'weights'
+pretrained_weights: 'weights/ntu60_stgcn.pt'
+last_epoch_weights: 'weights/last_epoch_model.pt'
+best_weights: 'weights/best_finetuned_model.pt' # Model tốt nhất để dùng
+
+# --- Cài đặt Model & Huấn luyện ---
+model_architecture: 'STGCN' # Tên kiến trúc
+num_classes: 6               # Số lớp hành động của bạn
+max_frames: 300              # Độ dài cố định cho chuỗi xương
+device: 'cuda'               # Thiết bị huấn luyện ('cuda' hoặc 'cpu')
+
+# Hyperparameters cho src/train.py
+training:
+  num_epochs: 100
+  batch_size: 16
+  learning_rate: 0.0001 # (1e-4)
+  validation_split: 0.2
+  random_seed: 42
+
+# --- Cài đặt Ứng dụng Web ---
+web_app:
+  host: '0.0.0.0'
+  port: 8000
+  confidence_threshold: 0.6 # Ngưỡng cho lớp "Unknown"
+  fps_limit: 15             # Giới hạn FPS gửi từ client
+
+# --- Các lớp hành động ---
+# Thứ tự này PHẢI khớp với src/train.py và src/inference.py
+class_names:
+  - 'walking'
+  - 'running'
+  - 'jumping'
+  - 'standing_up'
+  - 'carrying'
+  - 'falling' # Hoặc 'lying_down' tùy bạn đặt tên
